@@ -1,0 +1,7 @@
+.sidenav-toggle{
+  display: none;
+  padding: 0;
+  @media (max-width: 560px ) {
+    display: flex;
+  }
+}

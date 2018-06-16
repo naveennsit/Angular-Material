@@ -1,3 +1,25 @@
-<p>
-  sidenav works!
-</p>
+
+
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav #sidenav  [opened]="!isSmallScreen()"
+               class="mat-elevation-z10  slide_bar"
+               [mode]="isSmallScreen() ? 'over' : 'side'">
+    <mat-toolbar color="primary">
+      Contacts
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="slide_content">
+    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+    <div class="wrapper">
+      {{!isSmallScreen()}}
+      <router-outlet ></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
