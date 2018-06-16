@@ -1,25 +1,28 @@
-
-
-<mat-sidenav-container class="example-container" >
-  <mat-sidenav #sidenav  [opened]="!isSmallScreen()"
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav [opened]="!isSmallScreen()"
                class="mat-elevation-z10  slide_bar"
                [mode]="isSmallScreen() ? 'over' : 'side'">
     <mat-toolbar color="primary">
       Contacts
     </mat-toolbar>
-    <mat-list>
-      <mat-list-item>Item 1</mat-list-item>
-      <mat-list-item>Item 2</mat-list-item>
-      <mat-list-item>Item 3</mat-list-item>
-    </mat-list>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let u of user | async">
+        <a matLine [routerLink]="['/contactmanager', u.id]">{{ u.name }}</a>
+        <button mat-icon-button >
+          <mat-icon svgIcon="{{u.avatar}}"></mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="slide_content">
     <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
     <div class="wrapper">
       {{!isSmallScreen()}}
-      <router-outlet ></router-outlet>
+      <router-outlet></router-outlet>
     </div>
+    sssss {{user | async}}
   </mat-sidenav-content>
+
 </mat-sidenav-container>
 
 
