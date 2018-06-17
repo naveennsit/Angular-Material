@@ -3,5 +3,7 @@
   padding: 0;
   @media (max-width: 560px ) {
     display: flex;
+    min-width: 25px;
   }
 }
+

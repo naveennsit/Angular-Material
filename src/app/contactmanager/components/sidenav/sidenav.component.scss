@@ -8,8 +8,18 @@
 }
 
 .slide_bar {
-  width: 250px;
+  width: 300px;
 }
-.slide_content {
-  margin-left: 280px;
+
+.list {
+  .list_user {
+    padding: 10px 0;
+  }
+  .list_user:focus{
+    outline: none;
+  }
+}
+
+.sidenav-toggle mat-button {
+
 }

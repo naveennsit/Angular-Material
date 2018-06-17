@@ -31,4 +31,8 @@ export class UserService {
       });
   }
 
+  getUserById(id) {
+    return this.storeData.users.find((x) => x.id === parseInt(id));
+  }
+
 }

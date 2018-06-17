@@ -6,8 +6,8 @@
       Contacts
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item *ngFor="let u of user | async">
-        <a matLine [routerLink]="['/contactmanager', u.id]">{{ u.name }}</a>
+      <mat-list-item *ngFor="let u of user | async" class="list">
+        <a matLine [routerLink]="['/contactmanager', u.id]" class="list_user">{{ u.name }}</a>
         <button mat-icon-button >
           <mat-icon svgIcon="{{u.avatar}}"></mat-icon>
         </button>
@@ -17,10 +17,8 @@
   <mat-sidenav-content class="slide_content">
     <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
     <div class="wrapper">
-      {{!isSmallScreen()}}
       <router-outlet></router-outlet>
     </div>
-    sssss {{user | async}}
   </mat-sidenav-content>
 
 </mat-sidenav-container>

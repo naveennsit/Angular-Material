@@ -9,12 +9,14 @@ import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { NoteComponent } from './components/note/note.component';
 
 const routes: Routes = [
   {
     path: '', component: ContactmanagerAppComponent,
     children: [
-      { path: '', component: MainContentComponent }
+      { path: '', component: MainContentComponent },
+      { path: ':id', component: MainContentComponent },
     ]
   },
   {path: '**', redirectTo: ''}
@@ -33,7 +35,8 @@ const routes: Routes = [
 declarations: [ContactmanagerAppComponent,
   ToolbarComponent,
   MainContentComponent,
-  SidenavComponent]
+  SidenavComponent,
+  NoteComponent]
 })
 
 export class ContactmanagerModule {
